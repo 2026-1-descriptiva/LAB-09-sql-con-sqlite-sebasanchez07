@@ -1,33 +1,6 @@
 -- 
---  Sea el siguiente conjunto de tablas en una base de datos:
+--  Sea el conjunto de tablas de la base de datos...
 -- 
---    tbl0
---    ------------------------
---    K0  CHAR(1)
---    c01 INT
---    c02 INT
---    c03 CHAR(4)
---    c04 FLOAT
---        
---    tbl1
---    ------------------------
---    K0  CHAR(1)
---    K1  INT
---    c12 FLOAT
---    c13 INT
---    c14 DATE
---    c15 FLOAT
---    c16 CHAR(4)
---
---    tbl2
---    ------------------------
---    K1  INT,
---    c21 FLOAT,
---    c22 INT,
---    c23 DATE,
---    c24 FLOAT,
---    c25 CHAR(5)
---
 --  Escriba una consulta que retorne por cada letra
 --  de la columna K0, el valor promedio de la columna c12
 --  en la tabla tbl1, para aquellos registros con c13 mayor
@@ -43,3 +16,7 @@
 -- 
 --  >>> Escriba su codigo a partir de este punto <<<
 --  
+SELECT K0, AVG(c12) + 0.0001 AS "avg(c12)"
+FROM tbl1 
+WHERE c13 > 400 
+GROUP BY K0;
